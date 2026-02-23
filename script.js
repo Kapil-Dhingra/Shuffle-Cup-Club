@@ -31,7 +31,7 @@ const loader = new GLTFLoader();
 let textArray = ['TextShuffle','TextCup','TextClub'];
 let textGlowInterval;
 
-const url = 'https://github.com/Kapil-Dhingra/Shuffle-Cup-Club/releases/download/Glb/fullScene.glb';
+const url = 'https://drive.google.com/file/d/1feuOMSY5akgsYdX1bXizJW4HOsMyGBKz/view?usp=sharing';
 
 loader.load(url, (gltf) => {
 
@@ -296,6 +296,7 @@ function shuffleCups() {
 
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+
 
 
 
