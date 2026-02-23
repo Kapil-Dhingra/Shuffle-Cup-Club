@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Shuffle Cup Club 3D</title>
+  <style>
+    body { margin: 0; overflow: hidden; }
+    canvas { display: block; }
+    #ui {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+      background: rgba(0,0,0,0.5);
+      color: white;
+      font-family: sans-serif;
+      border: 1px solid grey;
+    }
+
+    #gameBtns{
+      position: absolute;
+      bottom: 50px;
+      width:100%;
+      text-align: center;
+      z-index: 10;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="ui" class="rounded">
+    <h6 class="bg-secondary rounded-top p-1">Game controls:</h6>
+    <div class="p-2">
+      <span>Cup color:</span>
+      <select class="form-control mb-3" onchange="changeCupColor(event.target.value)">
+        <optgroup label="Reds & Oranges">
+            <option value="red">Classic Red</option>
+            <option value="crimson">Crimson Red</option>
+            <option value="electric_currant">Electric Currant</option>
+            <option value="burnt_orange">Burnt Orange</option>
+        </optgroup>
+
+        <optgroup label="Blues & Teals">
+            <option value="blue">Classic Blue</option>
+            <option value="o_b">Oceanic Blue</option>
+            <option value="deep_azure">Deep Azure</option>
+            <option value="slate_teal">Slate Teal</option>
+            <option value="arctic_teal">Arctic Teal</option>
+        </optgroup>
+
+        <optgroup label="Greens">
+            <option value="green">Classic Green</option>
+            <option value="forest">Forest Green</option>
+        </optgroup>
+
+        <optgroup label="Purples">
+          <option value="hyper_violet">Hyper Violet</option>
+            <option value="royal_purple">Royal Purple</option>
+        </optgroup>
+
+        <optgroup label="Others">
+           <option value="mustard">Mustard Gold</option>
+            <option value="dusty_rose">Dusty Rose</option>
+            <option value="steel_gray">Steel Gray</option>
+        </optgroup>
+    </select>
+
+      <span>Difficulty:</span>
+      <select class="form-control" onchange="changeDifficulty(event.target.value)">
+        <option value="1000">Barely Awake (Snail Speed)</option>
+        <option value="700" selected>Casual (Normal Human)</option>
+        <option value="400">Eagle Eye (Fast)</option>
+        <option value="200">God Mode (Impossible)</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="gameBtns">
+     <button class="btn btn-lg btn-primary" id="playBtn" onclick="executeGame()">Play</button>
+    <button class="btn btn-lg btn-success" style="display:none;" id="shuffleBtn" onclick="startShuffling()">Start Shuffling</button>
+    <button class="btn btn-lg btn-danger" style="display:none;" id="stopShuffleBtn" onclick="stopShuffling()">Stop Shuffling</button>
+    <button class="btn btn-lg btn-info" style="display:none;" id="revealBallBtn" onclick="revealBall()">Reveal Ball</button>
+    <button class="btn btn-lg btn-secondary" style="display:none;" id="endGameBtn" onclick="endGame()">End Game</button>
+  </div>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160/examples/jsm/"
+  }
+}
+</script>
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
