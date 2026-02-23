@@ -31,10 +31,9 @@ const loader = new GLTFLoader();
 let textArray = ['TextShuffle','TextCup','TextClub'];
 let textGlowInterval;
 
-const proxy = 'https://corsproxy.io?';
 const url = 'https://github.com/Kapil-Dhingra/Shuffle-Cup-Club/releases/download/Glb/fullScene.glb';
 
-loader.load(proxy + url, (gltf) => {
+loader.load(url, (gltf) => {
 
     //  gltf.scene.children.push(gltf.scene.children[8].clone(true));
 
@@ -297,6 +296,7 @@ function shuffleCups() {
 
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+
 
 
 
